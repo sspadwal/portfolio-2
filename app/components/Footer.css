@@ -1,0 +1,84 @@
+/* components/Footer.css */
+
+.footer {
+  background: rgba(6, 0, 16, 0.95);
+  border-top: 1px solid rgba(138, 43, 226, 0.2);
+  padding: 1.5rem 0;
+  backdrop-filter: blur(10px);
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.footer-icon {
+  width: 20px;
+  height: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: #8a2be2;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .footer-content {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .footer-text {
+    font-size: 0.85rem;
+  }
+  .footer-links {
+    gap: 0.8rem;
+  }
+  .footer-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem 0;
+  }
+  .footer-text {
+    font-size: 0.8rem;
+  }
+  .footer-links {
+    gap: 0.6rem;
+  }
+  .footer-icon {
+    width: 16px;
+    height: 16px;
+  }
+}

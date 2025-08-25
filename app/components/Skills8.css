@@ -1,0 +1,300 @@
+/* Skills.css */
+.skills-section {
+    padding: 3rem 0;
+    background: white;
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.skills-heading {
+    font-size: 2.25rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #1f2937;
+}
+
+.skills-heading-gradient {
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.skills-category {
+    margin-bottom: 4rem;
+}
+
+.category-header {
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.category-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(59,130,246,0.5) 0%, rgba(124,58,237,0.5) 100%);
+}
+
+.category-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: #374151;
+}
+
+/* Curved Loop Container */
+.skills-curved-loop {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 20px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* SVG Styling */
+.skills-curve-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    user-select: none;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    display: block;
+    pointer-events: none;
+}
+
+.skills-text-measure {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+
+.skills-curve-text {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    fill: rgba(0, 0, 0, 0.1);
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Skills Icons Overlay */
+.skills-icons-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 10;
+    padding: 1rem;
+}
+
+.skill-icon-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: floatIn 0.6s ease-out both;
+}
+
+@keyframes floatIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.skill-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--skill-border);
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.08),
+        0 2px 4px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-icon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.skill-icon-container:hover .skill-icon-wrapper::before {
+    left: 100%;
+}
+
+.skill-icon-curved {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.skill-name-tooltip {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: var(--skill-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 20;
+}
+
+.skill-name-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: var(--skill-color);
+}
+
+/* Hover Effects */
+.skill-icon-container:hover .skill-icon-wrapper {
+    transform: translateY(-5px) scale(1.05);
+    border-color: var(--skill-color);
+    box-shadow: 
+        0 0 25px var(--skill-color),
+        0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.skill-icon-container:hover .skill-icon-curved {
+    transform: scale(1.1);
+}
+
+.skill-icon-container:hover .skill-name-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-curved-loop {
+        height: 140px;
+    }
+    
+    .skills-icons-overlay {
+        gap: 2rem;
+        padding: 0.5rem;
+    }
+    
+    .skill-icon-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .skill-icon-curved {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .skills-curve-text {
+        font-size: 1.5rem;
+    }
+    
+    .skills-text-measure {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-curved-loop {
+        height: 120px;
+    }
+    
+    .skills-icons-overlay {
+        gap: 1.5rem;
+    }
+    
+    .skill-icon-wrapper {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .skill-icon-curved {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .skills-curve-text {
+        font-size: 1.2rem;
+    }
+    
+    .skills-text-measure {
+        font-size: 1.2rem;
+    }
+    
+    .skill-name-tooltip {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
+}
+
+/* Performance Optimizations */
+.skill-icon-wrapper {
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.skills-curve-svg {
+    transform: translateZ(0);
+}

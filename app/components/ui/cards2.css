@@ -1,0 +1,301 @@
+/* cards.css */
+
+/* Grid container for cards */
+
+.comet-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Projects container - converted from Tailwind flex flex-wrap justify-center gap-8 */
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+/* Main project card - converted from myproject class with Tailwind classes */
+
+.project-card {
+  margin: 40px 0;
+  display: flex;
+  width: 320px;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 16px;
+  background-color: #1f2121;
+  padding: 8px;
+  filter: saturate(0);
+  transition: all 0.3s ease;
+}
+
+/* MD breakpoint styles */
+
+@media (min-width: 768px) {
+  .project-card {
+    margin: 80px 0;
+    padding: 16px;
+  }
+}
+
+/* Hover effects */
+
+.project-card:hover {
+  filter: saturate(1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Image container - converted from mx-2 flex-1 rounded-[12px] overflow-hidden */
+
+.image-container {
+  margin-left: 8px;
+  margin-right: 8px;
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Image wrapper - converted from relative mt-2 aspect-video w-full */
+
+.image-wrapper {
+  position: relative;
+  margin-top: 8px;
+  aspect-ratio: 16/9;
+  width: 100%;
+}
+
+/* Project image - converted from absolute inset-0 h-full w-full bg-[#000000] object-contain contrast-75 hover:contrast-100 transition-all duration-300 */
+
+.project-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000000;
+  object-fit: contain;
+  filter: contrast(0.75);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .project-image {
+  filter: contrast(1);
+  transform: scale(1.05);
+}
+
+/* Content container - converted from mt-4 flex flex-col p-4 text-white rounded-[12px] */
+
+.content-container {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  color: white;
+  border-radius: 12px;
+}
+
+/* Project title - converted from text-lg font-bold mb-2 */
+
+.project-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* Project description - converted from text-sm text-gray-300 mb-4 */
+
+.project-description {
+  font-size: 0.875rem;
+  color: #d1d5db;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* Tech stack container - converted from flex flex-wrap gap-2 */
+
+.tech-stack-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Tech item - converted from text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded-md */
+
+.tech-item {
+  font-size: 0.75rem;
+  background-color: #1f2937;
+  color: #d1d5db;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Main card styles */
+
+.comet-card {
+  border-radius: 16px;
+  background: #1f2121;
+  padding: 16px;
+  transition: all 0.3s ease;
+  margin: 40px 0;
+  width: 320px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+}
+
+/* Gradient border effect for first 3 cards */
+
+.comet-card-container .comet-card:nth-child(-n + 3) {
+  z-index: 0;
+}
+
+.comet-card-container .comet-card:nth-child(-n + 3)::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(235deg, #89ff00, #010615, #00bcd4);
+  z-index: -1;
+  border-radius: 18px;
+}
+
+.comet-card-container .comet-card:nth-child(2)::before {
+  background: linear-gradient(235deg, #ff005e, #010615, #fbff00);
+}
+
+.comet-card-container .comet-card:nth-child(3)::before {
+  background: linear-gradient(235deg, #772aff, #010615, #1b5e20);
+}
+
+.comet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  filter: saturate(100%);
+}
+
+.comet-card {
+  border: 2px solid green;
+}
+
+/* Image container */
+
+.comet-card-image-container {
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 8px;
+  flex: 1;
+}
+
+.comet-card-image-wrapper {
+  position: relative;
+  margin-top: 8px;
+  aspect-ratio: 16/9;
+  width: 100%;
+}
+
+.comet-card-image {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background: #000000;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: contrast(0.75);
+}
+
+.comet-card:hover .comet-card-image {
+  transform: scale(1.05);
+  filter: contrast(1);
+}
+
+/* Content container */
+
+.comet-card-content {
+  margin-top: 16px;
+  padding: 16px;
+  color: white;
+  border-radius: 12px;
+}
+
+.comet-card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.comet-card-description {
+  font-size: 0.875rem;
+  color: #a1a1aa;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.comet-card-tech-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.comet-card-tech-item {
+  font-size: 0.75rem;
+  background: #3f3f46;
+  color: #e4e4e7;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Dark mode adjustments */
+
+@media (prefers-color-scheme: dark) {
+  .comet-card {
+    background: #1a1a1a;
+  }
+  .comet-card-content {
+    color: #f4f4f5;
+  }
+  .comet-card-description {
+    color: #a1a1aa;
+  }
+  .comet-card-tech-item {
+    background: #3f3f46;
+    color: #e4e4e7;
+  }
+  .project-card {
+    background-color: #1a1a1a;
+  }
+  .content-container {
+    color: #f4f4f5;
+  }
+  .project-description {
+    color: #a1a1aa;
+  }
+  .tech-item {
+    background-color: #3f3f46;
+    color: #e4e4e7;
+  }
+}
+
+.myproject {
+  border: 1px solid red;
+}
+
+.rounded-2xl .project-card {
+  border: 1px solid yellow;
+}
